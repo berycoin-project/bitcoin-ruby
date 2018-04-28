@@ -26,6 +26,8 @@ Some of the main features are:
  gem install eventmachine
  gem install bundler
  git clone https://github.com/berycoin-project/bitcoin-ruby.git; cd bitcoin-ruby; bundle install
+ gem build bitcoin-ruby.gemspec
+ gem install ./bitcoin-ruby-0.0.18.gem
 
 Note that some aspects of the library (such as networking, storage, etc.) need
 additional dependencies which are not specified in the gemspec. The core requirements are
