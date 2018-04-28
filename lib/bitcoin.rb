@@ -22,7 +22,7 @@ module Bitcoin
   autoload :BloomFilter,'bitcoin/bloom_filter'
 
   autoload :Dogecoin,   'bitcoin/dogecoin'
-  autoload :Litecoin,   'bitcoin/litecoin'
+  autoload :Berycoin,   'bitcoin/berycoin'
 
   autoload :ContractHash,   'bitcoin/contracthash'
 
@@ -99,7 +99,7 @@ module Bitcoin
 
       hex = decode_base58(address) rescue nil
       if hex && hex.bytesize == 50 && address_checksum?(address)
-        # Litecoin updates the P2SH version byte, and this method should recognize both.
+        # Berycoin updates the P2SH version byte, and this method should recognize both.
         p2sh_versions = [p2sh_version]
         if Bitcoin.network[:legacy_p2sh_versions]
           p2sh_versions += Bitcoin.network[:legacy_p2sh_versions]
