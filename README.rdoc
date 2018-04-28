@@ -9,7 +9,7 @@ Some of the main features are:
 * Bitcoin::Protocol can parse/create all protocol messages
 * Bitcoin::Script implementation, create/run scripts and verify signatures
 * Bitcoin::Builder provides a high-level API for creating transactions (and blocks)
-* Bitcoin::Litecoin implements all the litecoin-specific differences
+* Bitcoin::Berycoin implements all the berycoin-specific differences
 
 == Compatible with...
 
@@ -34,7 +34,7 @@ additional dependencies which are not specified in the gemspec. The core require
 intentionally kept to a minimum, so nobody has to install unneeded dependencies.
 
 * +bacon+ to run the specs
-* +scrypt+ to use a much faster scrypt hash implementation for Litecoin
+* +scrypt+ to use a much faster scrypt hash implementation for Berycoin
 
 If you would like to install using Bundler, put it in your Gemfile and run bundle install
  gem 'bitcoin-ruby', git: 'https://github.com/berycoin-project/bitcoin-ruby', branch: 'master', require: 'bitcoin'
