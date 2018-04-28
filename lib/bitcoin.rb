@@ -298,13 +298,13 @@ module Bitcoin
       bitcoin_hash(h)
     end
 
-    def litecoin_hash(hex)
+    def berycoin_hash(hex)
       bytes = [hex].pack("H*").reverse
       begin
         require "scrypt" unless defined?(::SCrypt)
         hash = SCrypt::Engine.__sc_crypt(bytes, bytes, 1024, 1, 1, 32)
       rescue LoadError
-        hash = Litecoin::Scrypt.scrypt_1024_1_1_256_sp(bytes)
+        hash = Berycoin::Scrypt.scrypt_1024_1_1_256_sp(bytes)
       end
       hash.reverse.unpack("H*")[0]
     end
@@ -312,7 +312,7 @@ module Bitcoin
     def block_scrypt_hash(prev_block, mrkl_root, time, bits, nonce, ver)
       h = "%08x%08x%08x%064s%064s%08x" %
             [nonce, bits, time, mrkl_root, prev_block, ver]
-      litecoin_hash(h)
+      berycoin_hash(h)
     end
 
     # get merkle tree for given +tx+ list.
@@ -578,7 +578,7 @@ module Bitcoin
     @network
   end
 
-  [:bitcoin, :namecoin, :litecoin, :dogecoin, :dogecoin_testnet].each do |n|
+  [:bitcoin, :namecoin, :berycoin, :dogecoin, :dogecoin_testnet].each do |n|
     instance_eval "def #{n}?; network_project == :#{n}; end"
   end
 
@@ -788,7 +788,7 @@ module Bitcoin
       }
     })
 
-  NETWORKS[:dogecoin] = NETWORKS[:litecoin].merge({
+  NETWORKS[:dogecoin] = NETWORKS[:berycoin].merge({
       project: :dogecoin,
       magic_head: "\xc0\xc0\xc0\xc0",
       message_magic: "Dogecoin Signed Message:\n",
