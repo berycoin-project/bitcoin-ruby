@@ -1,6 +1,6 @@
 require 'openssl'
 
-module Litecoin
+module Berycoin
   module Scrypt
 
     def scrypt_1024_1_1_256_sp(input, scratchpad=[])
@@ -72,12 +72,12 @@ if $0 == __FILE__
     p hash.reverse.unpack("H*")[0] == "00000000002bef4107f882f6115e0b01f348d21195dacd3582aa2dabd7985806"
   rescue LoadError
     puts "scrypt gem not found, using native scrypt"
-    p Litecoin::Scrypt.scrypt_1024_1_1_256_sp(secret_bytes).reverse.unpack("H*")[0] == "00000000002bef4107f882f6115e0b01f348d21195dacd3582aa2dabd7985806"
+    p Berycoin::Scrypt.scrypt_1024_1_1_256_sp(secret_bytes).reverse.unpack("H*")[0] == "00000000002bef4107f882f6115e0b01f348d21195dacd3582aa2dabd7985806"
   end
 
   require 'benchmark'
   Benchmark.bmbm{|x|
     x.report("v1"){ SCrypt::Engine.__sc_crypt(secret_bytes, secret_bytes, 1024, 1, 1, 32).reverse.unpack("H*") rescue nil }
-    x.report("v2"){ Litecoin::Scrypt.scrypt_1024_1_1_256_sp(secret_bytes).reverse.unpack("H*")[0] }
+    x.report("v2"){ Berycoin::Scrypt.scrypt_1024_1_1_256_sp(secret_bytes).reverse.unpack("H*")[0] }
   }
 end
