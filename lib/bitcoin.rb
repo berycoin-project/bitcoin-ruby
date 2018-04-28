@@ -736,8 +736,8 @@ module Bitcoin
       legacy_p2sh_versions: ["14"],
       privkey_version: "d8",
       bech32_hrp: "bery",
-      extended_privkey_version: "019d9cfe",
-      extended_pubkey_version: "019da462",
+      extended_privkey_version: "0586dcf1",
+      extended_pubkey_version: "0586c22e",
       default_port: 9947,
       protocol_version: 70002,
       max_money: 50_000_000_000 * COIN,
@@ -766,26 +766,25 @@ module Bitcoin
       auxpow_chain_id: 1,
     })
 
-  NETWORKS[:litecoin_testnet] = NETWORKS[:litecoin].merge({
-      magic_head: "\xfd\xd2\xc8\xf1",
-      address_version: "6f",
+  NETWORKS[:berycoin_testnet] = NETWORKS[:berycoin].merge({
+      magic_head: "\xac\xb2\xd5\x2c",
+      address_version: "0b",
       p2sh_version: "3a",
       legacy_p2sh_versions: nil,
-      privkey_version: "ef",
-      bech32_hrp: "tltc",
-      extended_privkey_version: "0436ef7d",
-      extended_pubkey_version: "0436f6e1",
-      default_port: 19335,
+      privkey_version: "e5",
+      bech32_hrp: "tbery",
+      extended_privkey_version: "053784a4",
+      extended_pubkey_version: "053782bf",
+      default_port: 19947,
       dns_seeds: [
-        "testnet-seed.ltc.xurious.com",
-        "seed-b.litecoin.loshan.co.uk",
-        "dnsseed-testnet.thrasher.io",
+        "testnet.berycoin.com",
+        "testnet.berycoin.org",
       ],
-      genesis_hash: "4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0",
-      alert_pubkeys: ["04302390343f91cc401d56d68b123028bf52e5fca1939df127f63c6467cdf9c8e2c14b61104cf817d0b780da337893ecc4aaff1309e536162dabbdb45200ca2b0a"],
+      genesis_hash: "fa211189d78247c5173828cdf035a808a69d74294022d0d5d170d707544d7ba8",
+      alert_pubkeys: ["0482fae82061c1400ca141ccb3831ee91bbb054495b75bd13a44c83e6bdff949eb69c76cce3d8957328cec83513f3a1f40d15b4f8a0dcbdd14555bdd3fe45649b4"],
       known_nodes: [],
       checkpoints: {
-        546 => "bf434a4c665307f52a041ee40faa7bf56284c5f3b5d11bf6182aba537961f86c",
+        0 => "fa211189d78247c5173828cdf035a808a69d74294022d0d5d170d707544d7ba8",
       }
     })
 
