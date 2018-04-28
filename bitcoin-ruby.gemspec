@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = ""
   s.summary     = %q{bitcoin utils and protocol in ruby}
   s.description = %q{This is a ruby library for interacting with the bitcoin protocol/network}
-  s.homepage    = "https://github.com/lian/bitcoin-ruby"
+  s.homepage    = "https://github.com/berycoin-project/bitcoin-ruby"
 
   s.rubyforge_project = "bitcoin-ruby"
 
