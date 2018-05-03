@@ -730,7 +730,7 @@ module Bitcoin
   NETWORKS[:berycoin] = NETWORKS[:bitcoin].merge({
       project: :berycoin,
       magic_head: "\xac\x3e\xd3\xfd",
-      message_magic: "berycoin Signed Message:\n",
+      message_magic: "Berycoin Signed Message:\n",
       address_version: "19",
       p2sh_version: "33",
       legacy_p2sh_versions: ["14"],
