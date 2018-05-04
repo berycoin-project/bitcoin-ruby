@@ -26,9 +26,6 @@ Some of the main features are:
  gem install eventmachine
  gem install bundler
  gem install json
- git clone https://github.com/berycoin-project/insight-ruby.git; cd insight-ruby; bundle install
- gem build insight-ruby.gemspec
- gem install ./insight_bitpay-0.0.8.gem
  git clone https://github.com/berycoin-project/bitcoin-ruby.git; cd bitcoin-ruby; bundle install
  gem build bitcoin-ruby.gemspec
  gem install ./bitcoin-ruby-0.0.18.gem
