@@ -739,7 +739,7 @@ module Bitcoin
       extended_privkey_version: "0586dcf1",
       extended_pubkey_version: "0586c22e",
       default_port: 9947,
-      protocol_version: 70015,
+      protocol_version: 70002,
       max_money: 50_000_000_000 * COIN,
       min_tx_fee: 100_000, # 0.001 LTC
       min_relay_tx_fee: 100_000, # 0.001 LTC
