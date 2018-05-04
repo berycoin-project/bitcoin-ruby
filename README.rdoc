@@ -25,6 +25,7 @@ Some of the main features are:
  # OR
  gem install eventmachine
  gem install bundler
+ gem install json
  git clone https://github.com/berycoin-project/bitcoin-ruby.git; cd bitcoin-ruby; bundle install
  gem build bitcoin-ruby.gemspec
  gem install ./bitcoin-ruby-0.0.18.gem
